@@ -1,0 +1,14 @@
+import { Request, Response } from 'express'
+
+export class {{pascalCase resource}}{{pascalCase useCase}}Controller {
+  async handle(req: Request, res: Response) {
+    const {} = req.body
+
+    const {{camelCase useCase}}Repository = new {{pascalCase useCase}}Repository()
+    const {{camelCase resource}}{{pascalCase useCase}}UseCase = new {{pascalCase resource}}{{pascalCase useCase}}UseCase({{camelCase useCase}}Repository)
+
+    await {{camelCase resource}}{{pascalCase useCase}}UseCase.execute({})
+
+    return res.status('200').send()
+  }
+}
