@@ -1,0 +1,15 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Books Documentation",
+    "description": "This is an API Books",
+    "version": "1.0.0",
+    "contact": {
+      "email": "example@gmail.com"
+    }
+  },
+  "paths": {
+  },
+  "definitions": {
+  }
+}

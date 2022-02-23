@@ -1,42 +1,54 @@
-![Union Group](https://res.cloudinary.com/dbnq26wqe/image/upload/v1644082143/others/LOGO_GRUPO_4-removebg-preview_k3ptag.png)
+## **Etapas**
+> Fique atento as configurações do docker compose! as configurações do ormconfig.json devem ser iguais as credenciais do docker-compose! usuário, senha, nome do container e banco que você configurar!
 
-Boilerplate utilizado pelos times de backend, durante os projetos desenvolvidos pelo Union Group.
+* Criar o arquivo **.env** como o **.env-example**
+* Criar o arquivo **ormconfig.json** como o **ormconfig.json**
+* instalar todas as dependências
 
-## O que é utilizado?
-- [Express](https://expressjs.com/pt-br/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [TS Node Dev](https://github.com/wclr/ts-node-dev)
-- [Typeorm](https://typeorm.io/)
-- [PostgreSQL](https://www.postgresql.org/)
-- [Uuid](https://github.com/uuidjs/uuid)
-- [Git Commit Msg Linter](https://github.com/legend80s/commit-msg-linter)
-- [Eslint](https://eslint.org/)
-- [Prettier](https://prettier.io/)
-- [Plop](https://github.com/plopjs/plop)
+  npm:
 
-## Comandos
+      npm install
 
-- `dev`: Roda o servidor de desenvolvimento em `localhost:5000`
-- `typeorm`: Executa o cli do typeorm.
-- `generate`: Roda o gerador de arquivos.
+  yarn:
 
-## Inciando
+      yarn
 
-### Configurando o banco de dados
-1. Crie um banco de dados PostgreSQL.
-2. Renomeie o arquivo `ormconfig-example.json` para `ormconfig.json`.
-3. Adicione as crêdencias de acesso ao banco no arquivo `ormconfig.json`.
-4. Rode as migrations com o comando `yarn typeorm migration:run`
-#### Se não ocorrer nem um erro a configuração está correta.
+## **Config pessoais**
+> Substituir a variavel de ambiente "BANCO_DE_TESTES" no script de teste pelo nome do banco de testes que você criar quando for fazer os testes de integração.
 
-### Rodando o servidor de desenvolvimento
-1. Renomeie o arquivo `.env-example` para `.env`.
-2. Rode o comando `yarn dev`
-3. Acesse [http://localhost:5000](http://localhost:5000)
+    "scripts": {
+      "test": "DB=BANCO_DE_TESTES  jest --runInBand --detectOpenHandles"
+    },
 
-## Gerando arquivos
-Você pode utilizar o gerador para gerar a maioria dos arquivos de forma automatica.
+## **Rodando o Projeto**
 
-![plop demo](https://res.cloudinary.com/dbnq26wqe/image/upload/v1645127370/others/node_zntvds.gif)
+> ### **Com o Docker**
+    docker-compose up
+
+> ### **Sem o Docker**
+    yarn dev
+
+
+## **Docker commands**
+
+**Run containers**:
+
+    docker-compose up
+
+**Show containers**
+
+    docker ps
+
+**Show containers formmated**
+
+    docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Ports}}"
+
+
+## **Configurações Opcionais**
+**Se caso houver erro no eslint/prettier de espaço entre as chaves { }**
+deve adicionar as seguintes linhas no settings.json do vscode
+
+      "javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+      "typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
 
 

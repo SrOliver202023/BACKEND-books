@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  database:
+    image: postgres
+    container_name: database
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=usernamedb
+      - POSTGRES_PASSWORD=password123.
+      - POSTGRES_DB=database
+    volumes:
+      - pgdata:/data/postgres
+  app:
+    build: .
+    container_name: backend-books
+    restart: always
+    ports:
+      - 5555:5555
+
+    volumes:
+      - .:/usr/app
+    links:
+      - database
+    depends_on:
+      - database
+volumes:
+  pgdata:
+    driver: local
