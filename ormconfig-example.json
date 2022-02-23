@@ -1,13 +1,18 @@
 {
-  "type": "postgres",
-  "port": 5432,
-  "host": "localhost",
-  "username": "user",
-  "password": "pass",
-  "database": "db_name",
-  "migrations": ["./src/database/migrations/*.ts"],
-  "entities": ["./src/entities/**/*.ts"],
-  "cli": {
-    "migrationsDir": "./src/database/migrations"
-  }
+   "type": "postgres",
+   "host": "localhost",
+   "port": 5432,
+   "username": "usernamedb",
+   "password": "password123.",
+   "database": "database",
+   "entities": [
+      "src/modules/**/infra/typeorm/entities/*.ts"
+   ],
+   "migrations": [
+      "src/shared/infra/typeorm/migrations/*.ts"
+   ],
+   "cli": {
+      "entitiesDir": "src/modules/**/infra/typeorm/entities",
+      "migrationsDir": "src/shared/infra/typeorm/migrations"
+   }
 }
