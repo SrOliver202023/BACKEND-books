@@ -1,9 +1,11 @@
 import { Router } from "express";
 
-import { examplesRoutes } from "./examples.routes";
+import { authorsRoutes } from "./authors.routes";
+import { booksRoutes } from "./books.routes";
 
 const router = Router();
 
-router.use("/", examplesRoutes);
+router.use("/authors", authorsRoutes);
+router.use("/books", booksRoutes);
 
 export { router };
